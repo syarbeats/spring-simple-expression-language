@@ -9,9 +9,17 @@ import org.springframework.core.env.Environment;
 public class LicenseConfigImpl implements ILicenseConfig{
 	
 	private String server;
+	private String applicationName; 
+	private String port;
+	private String licenseKeyFile;
+	private String username;
 	
-	public LicenseConfigImpl(String server) {
+	public LicenseConfigImpl(String server, String applicationName, String port, String licenseKeyFile, String username) {
 		this.server = server;
+		this.applicationName = applicationName;
+		this.port = port;
+		this.licenseKeyFile = licenseKeyFile;
+		this.username = username;
 	}
 	
 	@Override
@@ -32,6 +40,38 @@ public class LicenseConfigImpl implements ILicenseConfig{
 
 	public void setServer(String server) {
 		this.server = server;
+	}
+
+	public String getApplicationName() {
+		return applicationName;
+	}
+
+	public void setApplicationName(String applicationName) {
+		this.applicationName = applicationName;
+	}
+
+	public String getPort() {
+		return port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+	}
+
+	public String getLicenseKeyFile() {
+		return licenseKeyFile;
+	}
+
+	public void setLicenseKeyFile(String licenseKeyFile) {
+		this.licenseKeyFile = licenseKeyFile;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 
 }

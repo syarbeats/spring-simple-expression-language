@@ -19,8 +19,52 @@ public class BeanConfig {
 	@Value("#{environment['server']}")
 	private String server;
 	
+	@Value("#{environment['applicationName']}")
+	private String applicationName; 
+	
+	@Value("#{environment['port']}")
+	private String port;
+	
+	@Value("#{environment['licenseKeyFile']}")
+	private String licenseKeyFile;
+	
+	@Value("#{environment['username']}")
+	private String username;
+	
 	@Bean
 	public LicenseConfigImpl licenseConfig() {
-		return new LicenseConfigImpl(this.server);
+		return new LicenseConfigImpl(this.server, this.applicationName, this.port, this.licenseKeyFile, this.username);
+	}
+
+	public String getApplicationName() {
+		return applicationName;
+	}
+
+	public void setApplicationName(String applicationName) {
+		this.applicationName = applicationName;
+	}
+
+	public String getPort() {
+		return port;
+	}
+
+	public void setPort(String port) {
+		this.port = port;
+	}
+
+	public String getLicenseKeyFile() {
+		return licenseKeyFile;
+	}
+
+	public void setLicenseKeyFile(String licenseKeyFile) {
+		this.licenseKeyFile = licenseKeyFile;
+	}
+
+	public String getUsername() {
+		return username;
+	}
+
+	public void setUsername(String username) {
+		this.username = username;
 	}
 }
