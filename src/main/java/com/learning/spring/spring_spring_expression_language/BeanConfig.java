@@ -16,19 +16,19 @@ public class BeanConfig {
 	@Autowired
 	Environment environment;
 	
-	@Value("#{environment['server']}")
+	@Value("#{environment['app.server']}")
 	private String server;
 	
-	@Value("#{environment['applicationName']}")
+	@Value("#{environment['app.applicationName']}")
 	private String applicationName; 
 	
-	@Value("#{environment['port']}")
+	@Value("#{environment['app.port']}")
 	private String port;
 	
-	@Value("#{environment['licenseKeyFile']}")
+	@Value("#{environment['app.licenseKeyFile']}")
 	private String licenseKeyFile;
 	
-	@Value("#{environment['username']}")
+	@Value("${app.username}")
 	private String username;
 	
 	@Bean
